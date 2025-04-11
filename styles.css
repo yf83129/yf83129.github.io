@@ -9,6 +9,36 @@
   --bg-dark: #212529;
 }
 
+/* 名字高亮效果 */
+.name-highlight {
+  font-size: 1.8em;
+  background: linear-gradient(135deg, #ff80ff 0%, #cc33ff 50%, #aa00ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  font-weight: 900;
+  letter-spacing: 3px;
+  margin: 15px 0;
+}
+
+/* 无阴影按钮 */
+.no-shadow {
+  box-shadow: none !important;
+  border: none !important;
+  outline: none !important;
+  text-decoration: none !important;
+}
+
+.no-shadow:hover, 
+.no-shadow:focus, 
+.no-shadow:active {
+  box-shadow: none !important;
+  border: none !important;
+  outline: none !important;
+  text-decoration: none !important;
+}
+
 /* 全局滚动条样式 */
 ::-webkit-scrollbar {
   width: 8px;
@@ -77,6 +107,16 @@
   position: relative;
   overflow: hidden;
   z-index: 1;
+  box-shadow: none !important;
+  border: none !important;
+  outline: none !important;
+}
+
+.btn-hover-effect:focus,
+.btn-hover-effect:active {
+  box-shadow: none !important;
+  outline: none !important;
+  border: none !important;
 }
 
 .btn-hover-effect:after {
@@ -88,22 +128,7 @@
   height: 100%;
   background-color: rgba(255, 255, 255, 0.2);
   z-index: -2;
-}
-
-.btn-hover-effect:before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
-  transition: all 0.3s;
-  z-index: -1;
-}
-
-.btn-hover-effect:hover:before {
-  width: 100%;
+  box-shadow: none !important;
 }
 
 /* 社交图标动画 */
