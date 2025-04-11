@@ -1,0 +1,190 @@
+/* 主题配色 */
+:root {
+  --primary-color: #8A2BE2;
+  --secondary-color: #4B0082;
+  --accent-color: #9C27B0;
+  --text-light: #f8f9fa;
+  --text-dark: #343a40;
+  --bg-light: #ffffff;
+  --bg-dark: #212529;
+}
+
+/* 全局滚动条样式 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--primary-color), var(--secondary-color));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color);
+}
+
+/* 自定义动画 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* 图片悬停效果 */
+.img-hover-zoom {
+  overflow: hidden;
+}
+
+.img-hover-zoom img {
+  transition: transform 0.5s ease;
+}
+
+.img-hover-zoom:hover img {
+  transform: scale(1.1);
+}
+
+/* 卡片悬停效果 */
+.card {
+  transition: all 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* 导航栏滚动效果 */
+.navbar-scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 按钮悬停效果 */
+.btn-hover-effect {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-hover-effect:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  z-index: -2;
+}
+
+.btn-hover-effect:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+  z-index: -1;
+}
+
+.btn-hover-effect:hover:before {
+  width: 100%;
+}
+
+/* 社交图标动画 */
+.social-icon {
+  transition: all 0.3s;
+}
+
+.social-icon:hover {
+  transform: translateY(-5px) rotate(10deg);
+  color: var(--accent-color);
+}
+
+/* 技能条动画 */
+.skill-progress {
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-progress:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: skillShine 2s infinite;
+}
+
+@keyframes skillShine {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* 响应式优化 */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+}
+
+/* 夜间模式切换 */
+.dark-mode {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+}
+
+.dark-mode .card,
+.dark-mode .navbar,
+.dark-mode .navbar-scrolled {
+  background-color: #2d3748;
+  color: var(--text-light);
+}
+
+.dark-mode .text-gray-700,
+.dark-mode .text-gray-800,
+.dark-mode .text-gray-900 {
+  color: #e2e8f0;
+}
+
+.dark-mode .text-gray-600 {
+  color: #cbd5e0;
+}
+
+.dark-mode .bg-white {
+  background-color: #2d3748;
+}
+
+.dark-mode .bg-gray-50 {
+  background-color: #1a202c;
+} 
